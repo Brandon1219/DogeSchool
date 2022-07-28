@@ -20,6 +20,11 @@ namespace DogeSchool.Repository.Migrations
             .WithColumn("lastname").AsString().NotNullable()
             .WithColumn("birthday").AsDateTime().NotNullable();
 
+            Create.Table("teacher").InSchema("demongraphics")
+            .WithColumn("id").AsGuid().PrimaryKey().Unique().NotNullable()
+            .WithColumn("firstname").AsString().NotNullable()
+            .WithColumn("lastname").AsString().NotNullable();
+
         }
 
         private object WithColumn(string v)

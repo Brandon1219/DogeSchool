@@ -1,5 +1,6 @@
 using BuildingManager.Repository.IoC;
 using DogeSchool.Repository.Infrastructure;
+using DogeSchool.Repository.Repositories.StudentRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ builder.Services.AddRepository(builder.Configuration);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<IStudentRepository, StudentRepository>();
 
 var app = builder.Build();
 
